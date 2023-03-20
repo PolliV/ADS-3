@@ -5,8 +5,7 @@ int cbinsearch(int *arr, int size, int value) {
   int floor = size - 1;
   int mide;
   int count = 0;
-  while (roof <= floor)
-  {
+  while (roof <= floor) {
     mide = (floor + roof) / 2;
     count++;
     if (value < arr[mide]) {

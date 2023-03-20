@@ -2,21 +2,20 @@
 
 int cbinsearch(int *arr, int size, int value) {
   int roof = 0;
-  int floor = size - 1;
+  int floore = size - 1;
   int mide;
   int count = 0;
-  while (roof <= floor) {
-    mide = (floor + roof) / 2;
-    count++;
+  while (roof <= floore) {
+    mide = (floore + roof) / 2;
     if (value < arr[mide]) {
-      floor = mide - 1;
+      floore = mide - 1;
     } else if (value > arr[mide]) {
       roof = mide + 1;
     } else {
-      for (int i = 0; arr[mide] == arr[mide - 1]; i++) {
+      for (int i = 1; arr[mide] == arr[mide - i]; i++) {
         count++;
       }
-      for (int i = 0; arr[mide] == arr[mide + 1]; i++) {
+      for (int i = 0; arr[mide] == arr[mide + i]; i++) {
         count++;
       }
       return count;
